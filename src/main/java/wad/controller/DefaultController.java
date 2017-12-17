@@ -1,9 +1,9 @@
-a/*
+package wad.controller;
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package wad.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -17,7 +17,8 @@ import wad.domain.News;
 import wad.domain.Subject;
 import wad.repository.SubjectRepository;
 import wad.service.CategoryService;
-import wad.service.NewsService;package wad.controller;
+import wad.service.NewsService;
+
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
