@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nice News</title>
+    </head>
+    <body>
+        <h1>Add news</h1>
+
+        <form method="POST" action="/news/addingnews" enctype="multipart/form-data">
+            <label>Title:</label><br></br>
+            <input type="text" name="title" id="title"/><br></br>
+            <label>Content:</label><br></br>
+            <textarea name="content" id="content" rows="10" cols="30">The news content here.</textarea><br></br>
+            <label>Add picture:</label><br></br>
+            <input type="file" name="file" id="file"/><br></br>
+            <label>Select categories:</label><br></br>
+            <select multiple="multiple" size="4" name="categories" id="categories">
+                <option value="hyvinvointi">Hyvinvointi</option>
+                <option value="kolumni">Kolumnit</option>
+                <option value="kotimaa">Kotimaa</option>
+                <option value="kulttuuri">Kulttuuri</option>
+                <option value="politiikka">Politiikka</option>
+                <option value="pääkirjoitus">Pääkirjoitukset</option>
+                <option value="talous">Talous</option>
+                <option value="ulkomaat">Ulkomaat</option>
+                <option value="urheilu">Urheilu</option>                
+            </select><br></br>
+            
+   
+            <input type="submit" value="Add news!"/>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+wad/domain/Subject.class
+wad/controller/WriterController.class
+wad/repository/WriterRepository.class
+wad/service/NewsService.class
+wad/domain/News.class
+wad/repository/NewsRepository.class
+wad/domain/FileObject.class
+wad/service/CategoryService.class
+wad/service/WriterService.class
+wad/service/FileObjectService.class
+wad/controller/NewsController.class
+wad/domain/Writer.class
+wad/controller/CategoryController.class
+wad/repository/SubjectRepository.class
+wad/repository/FileObjectRepository.class

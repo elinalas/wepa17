@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Nice News</title>
+    </head>
+    <body>
+
+        <h2>All news</h2>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Delete news</th>
+            </tr>
+
+            <tr th:each="news : ${allnews}">
+                <td><a th:href="@{/news/{id}(id=${news.id})}" th:text="${news.name}">News name</a></td>
+                <td th:text='${news.date}'>Date</td>
+                <td><form th:action="@{/news/{id}(id=${news.id})}" th:method="DELETE"><input type="submit" value="Delete"/></form></td>
+            </tr>
+        </table>
+
+        <a th:href="@{/news/addnews}">Add news</a>
+    </body>
+</html>
