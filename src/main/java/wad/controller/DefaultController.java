@@ -89,10 +89,7 @@ public class DefaultController {
         c8.setName("Urheilu");
         c8.setNews(new ArrayList());
         categoryrepo.save(c8);
-        
 
-        
-        newsservice.addNews("Joulu on taas", "Joulu on jälleen 24. päivä eli ensi viikolla, tasan viikon päästä. Mahtavaa!", null, new HashSet());
     }
 
     @GetMapping("/")
