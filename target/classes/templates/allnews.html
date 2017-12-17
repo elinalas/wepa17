@@ -17,8 +17,6 @@
 
             <tr th:each="news : ${allnews}">
                 <td><a th:href="@{/news/{id}(id=${news.id})}" th:text="${news.title}">News title</a></td>
-                <td th:text='${news.date}'>Date</td>
-                <td><form th:action="@{/news/{id}(id=${news.id})}" th:method="DELETE"><input type="submit" value="Delete"/></form></td>
             </tr>
         </table>
 

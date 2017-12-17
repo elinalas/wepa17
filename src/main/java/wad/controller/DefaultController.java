@@ -1,18 +1,36 @@
-/*
+a/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package wad.controller;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import wad.domain.News;
 import wad.domain.Subject;
 import wad.repository.SubjectRepository;
 import wad.service.CategoryService;
+import wad.service.NewsService;package wad.controller;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import wad.domain.News;
+import wad.domain.Subject;
+import wad.repository.SubjectRepository;
+import wad.service.CategoryService;
+import wad.service.NewsService;
 
 @Controller
 public class DefaultController {
@@ -20,10 +38,13 @@ public class DefaultController {
     @Autowired
     private SubjectRepository categoryrepo;
     
+    @Autowired
+    private NewsService newsservice;
+    
     
     
     @PostConstruct
-    public void init() {
+    public void init() throws IOException {
         Subject c = new Subject();
         c.setName("Hyvinvointi");
         c.setNews(new ArrayList());
@@ -68,6 +89,10 @@ public class DefaultController {
         c8.setName("Urheilu");
         c8.setNews(new ArrayList());
         categoryrepo.save(c8);
+        
+
+        
+        newsservice.addNews("Joulu on taas", "Joulu on jälleen 24. päivä eli ensi viikolla, tasan viikon päästä. Mahtavaa!", null, new HashSet());
     }
 
     @GetMapping("/")

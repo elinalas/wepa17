@@ -49,13 +49,8 @@ public class NewsController {
     
     
     @GetMapping("/news")
-    public String getNews(Model model) {
-        News trying = new News();
-        trying.setDate(LocalDateTime.now());
-        trying.setTitle("kokeilu otsikko");
-        List<News> news = newsservice.getNews();
-        news.add(trying);
-        model.addAttribute("allnews", news);
+    public String getNews(Model model) {       
+        model.addAttribute("allnews", newsservice.getNews());
         return "allnews.html";
     }
     
